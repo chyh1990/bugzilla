@@ -191,16 +191,18 @@
 [%# Navigation Bar                                                           #%]
 [%############################################################################%]
 
+[% IF bugs.size > 0 %]
 <table>
   <tr>
-    [% IF bugs.size > 0 %]
       <td valign="middle" class="bz_query_buttons">
-        <form method="post" action="show_bug.cgi">
+	<form method="post" action="show_bug.cgi">
           [% id = buglist.join(",") %]
           <input type="hidden" name="id" value="[% id FILTER html %]">
           <input type="hidden" name="format" value="multiple">
           <input type="submit" id="long_format" value="Long Format">
         </form>
+      </td>
+      <td valign="middle" class="bz_query_buttons">
         <form method="post" action="show_bug.cgi">
             <input type="hidden" name="ctype" value="xml">
           [% FOREACH id = buglist %]
@@ -209,7 +211,8 @@
             <input type="hidden" name="excludefield" value="attachmentdata">
             <input type="submit" value="XML" id="xml">
         </form>
-
+      </td>
+      <td valign="middle" class="bz_query_buttons">
         [% IF user.is_timetracker %]
           <form method="post" action="summarize_time.cgi">
             <input type="hidden" name="id" value="[% buglist_joined FILTER html %]">
@@ -224,8 +227,14 @@
                 Show all search results</a>.</small>
           [% END %]
         [% END %]
-      </td>
-      
+	</td>
+  <tr>
+</table>
+[% END %]
+
+<table>
+    <tr>
+    [% IF bugs.size > 0 %]
       <td>&nbsp;</td>
       
       <td valign="middle" class="bz_query_links">

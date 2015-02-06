@@ -1,37 +1,38 @@
 /* This Source Code Form is subject to the terms of the Mozilla Public
- * License, v. 2.0. If a copy of the MPL was not distributed with this file,
- * You can obtain one at http://mozilla.org/MPL/2.0/.
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  *
  * This Source Code Form is "Incompatible With Secondary Licenses", as
- * defined by the Mozilla Public License, v. 2.0. */
+ * defined by the Mozilla Public License, v. 2.0.
+ */
 
 @font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Open Sans'), local('OpenSans'), url(opensans.woff) format('woff');
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Open Sans'), local('OpenSans'), url(global/opensans.woff) format('woff');
 }
 
 @font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 600;
-  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(opensans-semibold.woff) format('woff');
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(global/opensans-semibold.woff) format('woff');
 }
 
 @font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(opensans-bold.woff) format('woff');
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Open Sans Bold'), local('OpenSans-Bold'), url(global/opensans-bold.woff) format('woff');
 }
 
 body {
     background: #f6f4ec;
-    background-image: url(noise.png);
-    background-image: url(noise.png), -moz-linear-gradient(#d7d3c8, #f6f4ec 400px);
-    background-image: url(noise.png), -webkit-linear-gradient(#d7d3c8, #f6f4ec 400px);
-    background-image: url(noise.png), linear-gradient(#d7d3c8, #f6f4ec 400px);
+    background-image: url(global/noise.png);
+    background-image: url(global/noise.png), -moz-linear-gradient(#d7d3c8, #f6f4ec 400px);
+    background-image: url(global/noise.png), -webkit-linear-gradient(#d7d3c8, #f6f4ec 400px);
+    background-image: url(global/noise.png), linear-gradient(#d7d3c8, #f6f4ec 400px);
     background-repeat: repeat, repeat-x;
     color: #404040;
 }
@@ -40,40 +41,9 @@ body, td, th, input, select, option, optgroup, .text_input {
     font-family: "Open Sans", "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
 
-/* security group colouring */
-/* these are also defined in skins/custom/bug_groups.css */
-
-body[class*=bz_group_] {
-    background-color: inherit;
-    background-image: url(noise.png), -moz-linear-gradient(#d7d7ff, #f0f0ff 400px);
-    background-image: url(noise.png), -webkit-linear-gradient(#d7d7ff, #f0f0ff 400px);
-    background-image: url(noise.png), linear-gradient(#d7d7ff, #f0f0ff 400px);
-}
-
-body[class*=core-security],
-body.bz_group_infrasec {
-    background-image: url(noise.png), -moz-linear-gradient(#ffe0b0, #fff4e3 400px);
-    background-image: url(noise.png), -webkit-linear-gradient(#ffe0b0, #fff4e3 400px);
-    background-image: url(noise.png), linear-gradient(#ffe0b0, #fff4e3 400px);
-}
-
-body.bz_group_webtools-security,
-body.bz_group_websites-security,
-body.bz_group_bugzilla-security {
-    background-image: url(noise.png), -moz-linear-gradient(#ffcccc, #fff0f0 400px);
-    background-image: url(noise.png), -webkit-linear-gradient(#ffcccc, #fff0f0 400px);
-    background-image: url(noise.png), linear-gradient(#ffcccc, #fff0f0 400px);
-}
-
-body.bz_group_client-services-security,
-body.bz_group_mozilla-services-security {
-    background-image: url(noise.png), -moz-linear-gradient(#ffffa3, #ffffe3 400px);
-    background-image: url(noise.png), -webkit-linear-gradient(#ffffa3, #ffffe3 400px);
-    background-image: url(noise.png), linear-gradient(#ffffa3, #ffffe3 400px);
-}
-
 a, #header a, #header a:visited, #footer a, #footer a:visited {
     color: #0095dd;
+    text-decoration: none;
 }
 
 a:hover, #header a:hover, #footer a:hover {
@@ -163,30 +133,25 @@ hr {
 }
 
 #titles {
-    width: 100%;
+    width: 95%;
     background-color: transparent;
-    padding: 0 1em 0 1em;
+    padding: 10px 10px 0px 10px;
+    color: #000;
 }
 
 #information {
     text-align: left;
-    padding-left: 2em;
+}
+
+#information p { float: right;
+    color: #888;
+    padding: 5px 20px;
 }
 
 #title {
     width: 150px;
     font-size: 120%;
-}
-
-#moz_tab {
-    width: 100px;
-    vertical-align: top;
-}
-
-#moz_login {
-    text-align: right;
-    padding-right: 2em;
-    color: #404040;
+    padding: 0px 0px 0px 5px;
 }
 
 #header .links {
@@ -195,18 +160,10 @@ hr {
     border-radius: 0;
     color: #404040;
     position: relative;
-    width: 50%;
 }
 
 #header .links {
     width: auto;
-}
-
-.login-links ul {
-}
-
-.login-links li {
-    display: inline;
 }
 
 .links a {
@@ -225,12 +182,21 @@ hr {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    background: url(search.png) 5px center no-repeat, #fafafa;
-    background: url(search.png) 5px center no-repeat, -moz-linear-gradient(#fafafa, #fff);
-    background: url(search.png) 5px center no-repeat, -webkit-linear-gradient(#fafafa, #fff);
-    background: url(search.png) 5px center no-repeat, linear-gradient(#fafafa, #fff);
+    background: url(global/search.png) 5px center no-repeat, #fafafa;
+    background: url(global/search.png) 5px center no-repeat, -moz-linear-gradient(#fafafa, #fff);
+    background: url(global/search.png) 5px center no-repeat, -webkit-linear-gradient(#fafafa, #fff);
+    background: url(global/search.png) 5px center no-repeat, linear-gradient(#fafafa, #fff);
     padding: .4em 1em .45em 26px;
     width: 200px;
+}
+
+#enter_bug      { background: url(index/bugzilla-papericon.png) no-repeat; }
+#query          { background: url(index/bugzilla-magnifier.png) no-repeat; }
+#account        { background: url(index/bugzilla-person-alternate.png) no-repeat; }
+#help           { background: url(index/bugzilla-questionmark2.png) no-repeat; }
+
+.column_header {
+    background-color: transparent;
 }
 
 #footer .links .quicksearch_form {
@@ -239,55 +205,6 @@ hr {
 
 #header .form a {
     margin: 0;
-}
-
-.links .dropdown {
-    background: rgba(0, 0, 0, 0.05);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: .25em;
-    display: inline-block;
-    padding: 4px 8px;
-    position: relative;
-    cursor: default;
-}
-
-.links .dropdown .anchor {
-    background-image: url(dropdown.png);
-    background-position: right center;
-    background-repeat: no-repeat;
-    display: inline-block;
-    min-width: 110px;
-    padding-right: 15px;
-}
-
-.links .dropdown ul {
-    background: #fafafa;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 0 0 .25em .25em;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-    display: none;
-    padding: 4px;
-    position: absolute;
-    right: -1px;
-    margin-top: 4px;
-    z-index: 2;
-    text-align: left;
-}
-
-.links .dropdown:hover ul {
-    display: block;
-}
-
-.links .dropdown li {
-    display: block;
-}
-
-.links .dropdown:hover {
-    border-bottom-right-radius: 0;
-}
-
-.links .dropdown li {
-    display: block;
 }
 
 #bugzilla-body {
@@ -313,8 +230,6 @@ hr {
     margin-top: 10px;
 }
 
-/* Bugs */
-
 .navigation {
     background: rgba(255, 255, 255, 0.3);
     padding: 5px 10px;
@@ -323,53 +238,6 @@ hr {
 u {
     border-bottom: 1px solid #aaa;
     text-decoration: none;
-}
-
-#field_container_see_also br {
-    margin-bottom: 10px;
-}
-
-.bz_alias_short_desc_container {
-    background: none;
-    font-size: 20px;
-    font-weight: normal;
-    line-height: 30px;
-    padding: 5px 0;
-    text-shadow: 0 1px rgba(255, 255, 255, 0.2);
-}
-
-.bz_alias_short_desc_container b {
-    font-weight: normal;
-}
-
-.bz_alias_short_desc_container .editme {
-    font-weight: normal;
-}
-
-.last_comment_link {
-    font-size: 18px;
-}
-
-.last_comment_link b {
-    border-bottom: 1px solid #aaa;
-    font-weight: normal;
-}
-
-table.edit_form {
-    background: #fff;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    padding: 10px 10px 80px;
-    position: relative;
-}
-
-table.edit_form tbody {
-    width: 100%;
-}
-
-table.edit_form hr {
-    display: none;
 }
 
 .field_label {
@@ -386,43 +254,6 @@ table.edit_form hr {
 
 .field_value .text_input {
     min-width: 0;
-}
-
-#product, #component {
-    width: 235px;
-}
-
-#bz_show_bug_column_1 tr:last-child span {
-    position: absolute;
-    left: 20px;
-    bottom: 20px;
-}
-
-#commit_top {
-    position: absolute;
-    bottom: 20px;
-    right: 10px;
-}
-
-.cc_list_display {
-    background: #fff;
-    float: none;
-    font-size: 11px;
-    margin-top: 3px;
-    max-width: none;
-    padding: 5px;
-}
-
-#project-flags, #custom-flags {
-    border-collapse: collapse;
-}
-
-#project-flags label, #custom-flags label {
-    margin-right: 10px;
-}
-
-#cf_crash_signature {
-    width: 100%;
 }
 
 #attachment_table {
@@ -452,9 +283,16 @@ table.edit_form hr {
     background: #ffffff;
 }
 
+.bz_comment_table {
+}
+
 .bz_comment {
-    width: 65em !important;
+    width: 65em;
     margin: 0 0 20px;
+}
+
+.bz_comment_table .bz_comment {
+    width: 65em !important;
 }
 
 .bz_comment pre, #comment {
@@ -506,27 +344,6 @@ table.edit_form hr {
     margin-left: 10px;
 }
 
-.ih_history {
-    padding: 0 !important;
-}
-
-.ih_history .bz_comment_head {
-    padding-bottom: 3px;
-}
-
-.ih_history_item:not(.ih_hidden) ~ .ih_history_item:not(.ih_hidden) {
-    margin-top: 20px;
-}
-
-.ih_history_change {
-    background: #eee;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    position: relative;
-}
-
 .bz_comment_text {
     background: #fff;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
@@ -535,6 +352,7 @@ table.edit_form hr {
     overflow: auto;
     padding: 10px;
     position: relative;
+    width: auto;
 }
 
 .bz_comment_text:after, .bz_comment_text:before {
@@ -561,45 +379,6 @@ table.edit_form hr {
     margin-bottom: -10px !important;
     overflow: auto;
     padding: 5px !important;
-}
-
-.bz_comment_tags {
-    background: #eee;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 5px;
-}
-
-.bz_comment_tag {
-    background: #fff;
-    color: #444;
-    border: none;
-    padding: 2px 6px;
-}
-
-.bz_comment_tag a {
-    color: #0095DD;
-}
-
-#bz_ctag_error {
-    border: none;
-    background-color: #faa;
-    color: #444;
-    padding: 2px 6px;
-}
-
-#bz_ctag_error a {
-    color: #0095DD;
-}
-
-.ih_inlinehistory {
-    background: #eee;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    position: relative;
-    top: -1px;
 }
 
 .bz_collapse_expand_comments li {
@@ -643,16 +422,8 @@ table.edit_form hr {
 
 #footer {
     background: #fff;
-    border: none;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 0;
     color: #bbb;
     width: auto;
-    margin-bottom: 1em;
-}
-
-#privacy-policy {
-    margin-bottom: 1em;
 }
 
 button, input[type=submit], input[type=button], #commit, #commit_top, #header .btn, #header input[type=submit] {
@@ -704,40 +475,14 @@ button[disabled], input[type=submit][disabled], input[type=button][disabled], bu
     cursor: pointer;
 }
 
-.notransition {
-  -webkit-transition: none !important;
-  -moz-transition: none !important;
-  -o-transition: none !important;
-  -ms-transition: none !important;
-  transition: none !important;
-}
-
 .calendar_button, .calendar_button:hover {
     box-shadow: none;
     padding: 0;
 }
 
-.related_actions {
-    line-height: 19px;
-    padding: 5px 10px;
-}
-
-/* Attachments */
-
-#viewFrame {
-    border: 2px solid #222;
-    margin-bottom: 10px;
-}
-
-#editFrame, #viewDiffFrame, #viewFrame {
-    margin-left: 0;
-}
-
 #flags label {
     font-weight: normal;
 }
-
-/* tabs */
 
 table.tabs {
     border-collapse: separate;
@@ -769,18 +514,6 @@ table.tabs {
 .tabbody {
     background: white;
     padding: 1em 2em;
-}
-
-/* splinter */
-
-#splinter-files .new-line, #splinter-files .old-line {
-    font-size: 90%;
-}
-
-/* search */
-
-#summary_field.search_field_row input {
-    padding-bottom: 6px;
 }
 
 /* Smaller than standard 990 (devices and browsers) */
@@ -826,8 +559,6 @@ table.tabs {
         height: 20px;
     }
 }
-
-
 
 /* Mobile Landscape Size to Tablet Portrait */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
